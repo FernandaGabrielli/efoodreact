@@ -1,17 +1,10 @@
-import { useEffect, useState } from 'react'
 import * as S from './styles'
-import { Restaurant } from '../../pages/Home'
+import { useGetBannerQuery } from '../../services/api'
 import { useParams } from 'react-router-dom'
 
 const Banner = () => {
   const { id } = useParams()
-  const [restaurant, setRestaurant] = useState<Restaurant>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setRestaurant(res))
-  }, [id])
+  const { data: restaurant } = useGetBannerQuery(id!)
 
   return (
     <S.Imagem style={{ backgroundImage: `url(${restaurant?.capa})` }}>
