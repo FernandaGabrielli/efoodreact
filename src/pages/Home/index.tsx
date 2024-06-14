@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import ListaRestaurantes from '../../components/ListaRestaurantes'
-import { useEffect, useState } from 'react'
 
 export type Restaurant = {
   id: number

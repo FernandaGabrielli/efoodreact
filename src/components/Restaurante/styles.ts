@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-//import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.div`
   position: relative;
