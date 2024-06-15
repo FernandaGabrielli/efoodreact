@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { close } from '../../store/reducers/cart'
-import prato from '../../assets/images/prato.png'
 
 import {
   Overlay,
@@ -11,9 +10,10 @@ import {
   CartItem,
   ButtonCart
 } from './styles'
+import { formataPreco } from '../PratosRestaurante'
 
 const Cart = () => {
-  const { isOpen } = useSelector((state: RootReducer) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
 
   const dispatch = useDispatch()
 
@@ -21,22 +21,30 @@ const Cart = () => {
     dispatch(close())
   }
 
+  const getTotalPrice = () => {
+    items.reduce((acumulador, valorAtual) => {
+      return (acumulador += valorAtual.prices.current!)
+    }, 0)
+  }
+
   return (
     <CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
       <Sidebar>
         <ul>
-          <CartItem>
-            <img src={prato} />
-            <div>
-              <h3>Nome do prato</h3>
-              <span>R$ 80,00 </span>
-            </div>
-            <button type="button" />
-          </CartItem>
+          {items.map((item) => (
+            <CartItem key={item.id}>
+              <img src={item.foto} alt={item.nome} />
+              <div>
+                <h3>{item.nome}</h3>
+                <span>{formataPreco(item.preco)}</span>
+              </div>
+              <button type="button" />
+            </CartItem>
+          ))}
         </ul>
         <Prices>
-          <p>Valor total</p> <p>R$ 250,00</p>
+          <p>Valor total</p> <p>{formataPreco(getTotalPrice())}</p>
         </Prices>
         <ButtonCart
           title="Clique aqui para continuar com a compra"

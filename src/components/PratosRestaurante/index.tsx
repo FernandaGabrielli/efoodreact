@@ -3,7 +3,7 @@ import { useState } from 'react'
 import fechar from '../../assets/images/close.png'
 import * as S from './styles'
 import { useDispatch } from 'react-redux'
-import { add } from '../../store/reducers/cart'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
   id: number
@@ -19,7 +19,7 @@ type ModalState = {
   isVisible: boolean
 }
 
-const formataPreco = (preco = 0) => {
+export const formataPreco = (preco = 0) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL'
@@ -65,6 +65,7 @@ const PratosRestaurante = ({
   const dispatch = useDispatch()
   const addToCart = () => {
     dispatch(add(prato))
+    dispatch(open())
   }
 
   return (

@@ -28,7 +28,7 @@ export const CartContainer = styled.div`
 export const Sidebar = styled.aside`
   background-color: ${cores.coral};
   z-index: 1;
-  padding: 40px 16px 0;
+  padding: 40px 8px 0px 8px;
   max-width: 360px;
   width: 100%;
 `
@@ -52,13 +52,13 @@ export const CartItem = styled.li`
   background-color: ${cores.bege};
   padding: 8px;
   position: relative;
+  margin-bottom: 16px;
 
   img {
     height: 80px;
     width: 80px;
     object-fit: cover;
-    margin-right: 8px;
-    margin-bottom: 4px;
+    margin-right: 24px;
   }
 
   h3 {

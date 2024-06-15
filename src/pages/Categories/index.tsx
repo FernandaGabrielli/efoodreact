@@ -16,7 +16,7 @@ export type Prato = {
   cardapio: Prato[]
 }
 
-export interface Restaurant {
+export interface Restaurante {
   id: number
   titulo: string
   capa: string
