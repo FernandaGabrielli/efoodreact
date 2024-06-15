@@ -12,6 +12,7 @@ type Props = {
   descricao: string
   porcao: string
   preco: number
+  cardapio: []
 }
 
 type ModalState = {
@@ -25,7 +26,15 @@ const formataPreco = (preco = 0) => {
   }).format(preco)
 }
 
-const PratosRestaurante = ({ foto, nome, descricao, porcao, preco }: Props) => {
+const PratosRestaurante = ({
+  foto,
+  nome,
+  descricao,
+  porcao,
+  preco,
+  cardapio,
+  id
+}: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
@@ -41,6 +50,16 @@ const PratosRestaurante = ({ foto, nome, descricao, porcao, preco }: Props) => {
       return descricao.slice(0, 117) + '...'
     }
     return descricao
+  }
+
+  const prato = {
+    foto,
+    nome,
+    descricao,
+    porcao,
+    preco,
+    cardapio,
+    id
   }
 
   const dispatch = useDispatch()

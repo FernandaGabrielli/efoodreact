@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Prato } from '../../pages/Categories'
-import { Restaurant } from '../../pages/Home'
 
 type CartState = {
   items: Prato[]
@@ -11,8 +10,6 @@ const initialState: CartState = {
   items: [],
   isOpen: false
 }
-
-// Payload add precisa ser do tipo prato, não restaurant
 
 const cartSlice = createSlice({
   name: 'cart',
