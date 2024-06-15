@@ -5,14 +5,10 @@ import * as S from './styles'
 import { useDispatch } from 'react-redux'
 import { add, open } from '../../store/reducers/cart'
 
-type Props = {
-  id: number
-  foto: string
-  nome: string
-  descricao: string
-  porcao: string
-  preco: number
-  cardapio: []
+import { Prato } from '../../pages/Categories'
+
+type PratoProps = {
+  prato: Prato
 }
 
 type ModalState = {
@@ -28,13 +24,14 @@ export const formataPreco = (preco = 0) => {
 
 const PratosRestaurante = ({
   foto,
+  prices,
   nome,
   descricao,
   porcao,
   preco,
   cardapio,
   id
-}: Props) => {
+}: Prato) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
   })
@@ -59,6 +56,7 @@ const PratosRestaurante = ({
     porcao,
     preco,
     cardapio,
+    prices,
     id
   }
 

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { close } from '../../store/reducers/cart'
+import { close, remove } from '../../store/reducers/cart'
 
 import {
   Overlay,
@@ -21,10 +21,14 @@ const Cart = () => {
     dispatch(close())
   }
 
-  const getTotalPrice = () => {
-    items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.prices.current!)
+  const getTotalPrice = (): number => {
+    return items.reduce((acumulador, valorAtual) => {
+      return (acumulador += valorAtual.preco!)
     }, 0)
+  }
+
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
   }
 
   return (
@@ -39,7 +43,7 @@ const Cart = () => {
                 <h3>{item.nome}</h3>
                 <span>{formataPreco(item.preco)}</span>
               </div>
-              <button type="button" />
+              <button onClick={() => removeItem(item.id)} type="button" />
             </CartItem>
           ))}
         </ul>

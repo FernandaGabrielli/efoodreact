@@ -7,6 +7,7 @@ import { useGetRestaurantQuery } from '../../services/api'
 import Cart from '../../components/Cart'
 
 export type Prato = {
+  prices: number
   id: number
   foto: string
   preco: number
@@ -25,6 +26,7 @@ export interface Restaurante {
   tipo: string
   destacado: boolean
   cardapio: Prato[]
+  prices: number
 }
 
 const Categories = () => {
