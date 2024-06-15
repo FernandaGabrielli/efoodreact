@@ -6,6 +6,10 @@ export const cores = {
   coral: '#E66767',
   branco: '#ffffff'
 }
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
 
 export const GlobalCss = createGlobalStyle`
   * {
