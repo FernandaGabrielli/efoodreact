@@ -1,10 +1,16 @@
-import * as S from './styles'
-import { useGetBannerQuery } from '../../services/api'
 import { useParams } from 'react-router-dom'
 
+import * as S from './styles'
+
+import { useGetBannerQuery } from '../../services/api'
+
+type BannerParams = {
+  id: string
+}
+
 const Banner = () => {
-  const { id } = useParams()
-  const { data: restaurant } = useGetBannerQuery(id!)
+  const { id } = useParams() as BannerParams
+  const { data: restaurant } = useGetBannerQuery(id)
 
   return (
     <S.Imagem style={{ backgroundImage: `url(${restaurant?.capa})` }}>

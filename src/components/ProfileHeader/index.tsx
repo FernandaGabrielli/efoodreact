@@ -1,11 +1,13 @@
-import * as S from './styles'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { RootReducer } from '../../store'
 
 import logo from '../../assets/images/logo.png'
-import { Link } from 'react-router-dom'
+
+import * as S from './styles'
 
 import { open } from '../../store/reducers/cart'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
 
 const ProfileHeader = () => {
   const dispatch = useDispatch()

@@ -1,4 +1,3 @@
-//import Tag from '../Tag'
 import { Link } from 'react-router-dom'
 
 import estrela from '../../assets/images/estrela.png'

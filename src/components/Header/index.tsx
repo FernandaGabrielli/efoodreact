@@ -1,6 +1,8 @@
-import * as S from './styles'
-import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
+
+import * as S from './styles'
+
+import logo from '../../assets/images/logo.png'
 
 const Header = () => (
   <S.HeaderContainer>

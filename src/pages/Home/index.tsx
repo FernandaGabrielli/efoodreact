@@ -1,5 +1,6 @@
 import Header from '../../components/Header'
 import ListaRestaurantes from '../../components/ListaRestaurantes'
+
 import { useGetRestaurantsQuery } from '../../services/api'
 
 export type Restaurant = {

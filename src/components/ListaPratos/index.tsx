@@ -1,5 +1,7 @@
 import { Prato } from '../../pages/Categories'
+
 import PratosRestaurante from '../PratosRestaurante'
+
 import * as S from './styles'
 
 export type Props = {

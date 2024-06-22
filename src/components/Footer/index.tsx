@@ -1,5 +1,6 @@
-import * as S from './styles'
 import { Link } from 'react-router-dom'
+
+import * as S from './styles'
 
 import logo from '../../assets/images/logo.png'
 import instagram from '../../assets/images/instagram.png'

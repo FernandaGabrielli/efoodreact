@@ -1,15 +1,13 @@
 import { useState } from 'react'
-
-import fechar from '../../assets/images/close.png'
-import * as S from './styles'
 import { useDispatch } from 'react-redux'
-import { add, open } from '../../store/reducers/cart'
 
 import { Prato } from '../../pages/Categories'
 
-type PratoProps = {
-  prato: Prato
-}
+import fechar from '../../assets/images/close.png'
+
+import * as S from './styles'
+
+import { add, open } from '../../store/reducers/cart'
 
 type ModalState = {
   isVisible: boolean
