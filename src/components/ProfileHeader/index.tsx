@@ -31,7 +31,7 @@ const ProfileHeader = () => {
           </Link>
         </div>
         <div onClick={openCart}>
-          <p>{items.length} produto(s) no carrinho</p>
+          <p>{items.length} prato(s) no carrinho</p>
         </div>
       </S.Container>
     </S.HeaderContainer>

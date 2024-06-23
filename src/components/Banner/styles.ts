@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Imagem = styled.div`
   width: 100%;
@@ -23,12 +23,22 @@ export const Text = styled.p`
   font-weight: 100;
   font-size: 32px;
   margin-top: 24px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+    padding: 0 20px;
+  }
 `
 
 export const Titulo = styled.h2`
   font-size: 32px;
   color: ${cores.branco};
   margin-bottom: 32px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+    padding: 0 20px;
+  }
 `
 
 export const Container = styled.div`

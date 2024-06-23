@@ -34,6 +34,13 @@ export const Sidebar = styled.aside`
   padding: 40px 16px 0;
   max-width: 360px;
   width: 100%;
+
+  .empty-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${cores.begeClaro};
+    text-align: center;
+  }
 `
 
 export const CartItem = styled.li`

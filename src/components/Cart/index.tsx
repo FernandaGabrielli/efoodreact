@@ -65,8 +65,14 @@ const Cart = () => {
             </ButtonContinuar>
           </>
         ) : (
-          <Checkout setPayment={setPayment}></Checkout>
+          items.length === 0 && (
+            <p className="empty-text">
+              O carrinho está vazio, adicione ao menos um produto para continuar
+              com a compra.
+            </p>
+          )
         )}
+        {payment && <Checkout setPayment={setPayment} />}
       </Sidebar>
     </CartContainer>
   )
