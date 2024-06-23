@@ -4,6 +4,7 @@ import Banner from '../../components/Banner'
 import Cart from '../../components/Cart'
 import ProfileHeader from '../../components/ProfileHeader'
 import ListaPratos from '../../components/ListaPratos'
+import Loader from '../../components/Loader'
 
 import { useGetRestaurantQuery } from '../../services/api'
 
@@ -48,7 +49,7 @@ const Categories = () => {
       </>
     )
   }
-  return <h3>Carregando...</h3>
+  return <Loader />
 }
 
 export default Categories
